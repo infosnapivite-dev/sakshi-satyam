@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'Wolmer';
+  src: url('./assets/fonts/Wolmer.woff') format('woff'),
+       url('./assets/fonts/Wolmer.otf') format('opentype'),
+       url('./assets/fonts/Wolmer.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    overflow: hidden !important;
+    overscroll-behavior: none !important;
+    touch-action: none;
+    background-color: #08090d;
+    color: #e6e8ec;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Zero-Flickering & GSAP Performance Mandates */
+.gpu-layer {
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+/* Scrollbar Hiding for #mockup-scroll-container and Mobile Container */
+#mockup-scroll-container::-webkit-scrollbar,
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+#mockup-scroll-container,
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* Strict Viewport and Parent Scroll Lock */
+html, body, #root {
+  overscroll-behavior: none !important;
+  overscroll-behavior-y: none !important;
+}
+
