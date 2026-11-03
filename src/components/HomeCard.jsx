@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import logoImg from '../assets/logo.png';
 import paperTexture from '../assets/paper-texture.svg';
+import sakshiTitleImg from '../assets/sakshi-title.png';
 
 // Gentle luxury ease curve (velvety editorial deceleration)
 const luxuryEase = [0.22, 1, 0.36, 1];
@@ -229,23 +230,23 @@ export default function HomeCard({ scrollContainerRef }) {
           >
             <motion.p
               variants={textItemVariants}
-              className="font-cormorant italic font-bold text-[15px] sm:text-[16px] text-[#734b4f] leading-none mb-1"
+              className="font-cormorant italic font-bold text-[15px] sm:text-[16px] text-[#80484e] leading-none mb-1"
             >
               With the blessings of
             </motion.p>
 
             <motion.div
               variants={textItemVariants}
-              className="font-cormorant font-bold uppercase tracking-[0.04em] text-[14.5px] sm:text-[15.5px] text-[#6d4246] leading-tight text-center my-0.5"
+              className="font-cormorant font-bold uppercase tracking-[0.04em] text-[14.5px] sm:text-[15.5px] text-[#80484e] leading-tight text-center my-0.5"
             >
               <p>LATE SHRI SATISH KUMAR</p>
-              <p className="font-cormorant italic font-bold text-[14.5px] sm:text-[15.5px] text-[#734b4f] my-0.5 normal-case">&amp;</p>
+              <p className="font-cormorant italic font-bold text-[14.5px] sm:text-[15.5px] text-[#80484e] my-0.5 normal-case">&amp;</p>
               <p>SMT. RITA KESHRI</p>
             </motion.div>
 
             <motion.div
               variants={textItemVariants}
-              className="font-cormorant text-[16px] sm:text-[17px] text-[#72484c] leading-[1.32] font-bold mt-2 sm:mt-2.5 text-center"
+              className="font-cormorant text-[16px] sm:text-[17px] text-[#80484e] leading-[1.32] font-bold mt-2 sm:mt-2.5 text-center"
             >
               <p>together with their loved ones,</p>
               <p>the Keshri family requests the honour of</p>
@@ -254,27 +255,29 @@ export default function HomeCard({ scrollContainerRef }) {
           </motion.div>
 
           {/* Block 3: Hero Climax (Engagement & Bride) */}
-          <div className="flex flex-col items-center w-full">
+          <div className="flex flex-col items-center w-full -my-1 sm:-my-1.5">
             <motion.h1
               variants={heroTitleVariants}
-              className="font-cormorant font-bold text-[38px] sm:text-[42px] text-[#6a3d42] tracking-wide leading-none mb-1.5"
+              className="font-cormorant font-bold text-[38px] sm:text-[42px] text-[#80484e] tracking-wide leading-none mb-2.5 sm:mb-3"
             >
               Engagement
             </motion.h1>
 
             <motion.p
               variants={textItemVariants}
-              className="font-cormorant italic font-bold text-[17px] sm:text-[18px] text-[#734b4f] leading-none mb-2"
+              className="font-cormorant italic font-bold text-[17px] sm:text-[18px] text-[#80484e] leading-none mb-3 sm:mb-3.5"
             >
               of their beloved granddaughter
             </motion.p>
 
-            <motion.h2
+            {/* Bride Name: SAKSHI with connected SH ligature matching Reference */}
+            <motion.img
               variants={heroTitleVariants}
-              className="font-cormorant font-bold text-[34px] sm:text-[38px] uppercase tracking-[0.22em] text-[#6a3d42] leading-none pl-[0.22em]"
-            >
-              SAKSHI
-            </motion.h2>
+              src={sakshiTitleImg}
+              alt="Sakshi"
+              className="w-[152px] sm:w-[168px] h-auto object-contain select-none pointer-events-none drop-shadow-sm mx-auto"
+              draggable="false"
+            />
           </div>
 
           {/* Block 4: Lineage & Bottom Ornament */}
@@ -283,10 +286,10 @@ export default function HomeCard({ scrollContainerRef }) {
               variants={textItemVariants}
               className="flex flex-col items-center gap-0.5 w-full"
             >
-              <p className="font-cormorant text-[14px] sm:text-[15px] font-bold text-[#734b4f] leading-tight whitespace-nowrap">
+              <p className="font-cormorant text-[14px] sm:text-[15px] font-bold text-[#80484e] leading-tight whitespace-nowrap">
                 (D/o Mrs. Sangeeta &amp; Mr. Shekhar Keshri)
               </p>
-              <p className="font-cormorant text-[14px] sm:text-[15px] font-bold text-[#734b4f] leading-tight whitespace-nowrap">
+              <p className="font-cormorant text-[14px] sm:text-[15px] font-bold text-[#80484e] leading-tight whitespace-nowrap">
                 (Sister of Shradha &amp; Shreshth Keshri)
               </p>
             </motion.div>

@@ -206,6 +206,46 @@ export default function OpeningAnimation({ onEnded }) {
               perspective: '1000px',
             }}
           >
+            {/* Flap Announcement: "A beautiful beginning awaits..." directly on top of the seal */}
+            <div
+              className="absolute pointer-events-none select-none z-10 flex flex-col items-center text-center"
+              style={{
+                left: '50%',
+                top: 'calc(63.8% - 64px)',
+                transform: 'translate(-50%, -100%)',
+                width: '90%',
+                maxWidth: '260px',
+              }}
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 4 }}
+                animate={isBreaking ? { opacity: 0, y: -10, filter: 'blur(3px)' } : { opacity: 1, y: 0, filter: 'blur(0px)' }}
+                transition={{ duration: isBreaking ? 0.32 : 0.8, ease: 'easeOut' }}
+                className="w-full flex flex-col items-center"
+              >
+                <p className="font-cormorant font-semibold text-[14px] sm:text-[15.5px] text-[#80484e] leading-[1.2] tracking-[0.025em]">
+                  A beautiful beginning
+                </p>
+                <p className="font-cormorant font-semibold text-[14px] sm:text-[15.5px] text-[#80484e] leading-[1.2] tracking-[0.025em] mt-0.5">
+                  awaits...
+                </p>
+
+                {/* Delicate Gold Heart Ornament Divider */}
+                <div className="flex items-center justify-center gap-1.5 w-[102px] sm:w-[114px] opacity-80 mt-1 sm:mt-1.5">
+                  <div className="h-[0.75px] flex-1 bg-gradient-to-r from-transparent via-[#bfa682] to-[#bfa682]" />
+                  <div className="w-[2px] h-[2px] rotate-45 bg-[#bfa682]" />
+                  <svg
+                    className="w-2.5 h-2.5 fill-[#bfa682] text-[#bfa682] shrink-0"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                  </svg>
+                  <div className="w-[2px] h-[2px] rotate-45 bg-[#bfa682]" />
+                  <div className="h-[0.75px] flex-1 bg-gradient-to-l from-transparent via-[#bfa682] to-[#bfa682]" />
+                </div>
+              </motion.div>
+            </div>
+
             {/* Wax Seal Positioning Container — Exactly Centered on Flap Junction */}
             <div
               className="absolute pointer-events-auto cursor-pointer flex items-center justify-center select-none"
@@ -252,6 +292,37 @@ export default function OpeningAnimation({ onEnded }) {
                   />
                 )}
               </motion.div>
+            </div>
+
+            {/* Bottom Call to Action: "Click to open" */}
+            <div
+              className="absolute pointer-events-none select-none z-10 flex flex-col items-center text-center"
+              style={{
+                left: '50%',
+                top: 'calc(63.8% + 68px)',
+                transform: 'translate(-50%, 0)',
+              }}
+            >
+              <motion.p
+                initial={{ opacity: 0, y: -4 }}
+                animate={
+                  isBreaking
+                    ? { opacity: 0, y: 8, filter: 'blur(3px)' }
+                    : { opacity: [0.72, 1, 0.72], y: [0, -1.5, 0], filter: 'blur(0px)' }
+                }
+                transition={
+                  isBreaking
+                    ? { duration: 0.28 }
+                    : {
+                        duration: 2.2,
+                        repeat: Infinity,
+                        ease: 'easeInOut',
+                      }
+                }
+                className="font-cormorant font-semibold text-[13px] sm:text-[14.5px] text-[#80484e] tracking-[0.08em] whitespace-nowrap"
+              >
+                Click to open
+              </motion.p>
             </div>
           </div>
         )}

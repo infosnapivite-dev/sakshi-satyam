@@ -370,13 +370,13 @@ export default function EventCard({ scrollContainerRef }) {
           >
             <motion.p
               variants={textItemVariants}
-              className="font-cormorant font-bold text-[17.5px] sm:text-[19px] text-[#6d4246] tracking-wide leading-none mb-1"
+              className="font-cormorant font-bold text-[17.5px] sm:text-[19px] text-[#80484e] tracking-wide leading-none mb-1"
             >
               Sunday
             </motion.p>
             <motion.h2
               variants={textItemVariants}
-              className="font-cormorant font-bold uppercase tracking-[0.08em] text-[16.5px] sm:text-[18px] text-[#6a3d42] leading-none"
+              className="font-cormorant font-bold uppercase tracking-[0.08em] text-[16.5px] sm:text-[18px] text-[#80484e] leading-none"
             >
               13<span className="text-[11.5px] sm:text-[12px] align-super uppercase font-bold">th</span> DECEMBER 2026
             </motion.h2>
@@ -390,7 +390,7 @@ export default function EventCard({ scrollContainerRef }) {
             <div className="flex items-center justify-center gap-4 max-w-[295px]">
               
               {/* Left Column: 3 Line-Art Icons */}
-              <div className="flex flex-col items-center justify-between h-[122px] sm:h-[126px] text-[#734b4f]">
+              <div className="flex flex-col items-center justify-between h-[122px] sm:h-[126px] text-[#80484e]">
                 
                 {/* 1. Diya / Sacred Aarti Lamp for Tilak */}
                 <motion.div
@@ -401,13 +401,13 @@ export default function EventCard({ scrollContainerRef }) {
                     viewBox="0 0 24 24"
                     className="w-[25px] h-[25px]"
                     fill="none"
-                    stroke="#734b4f"
+                    stroke="#80484e"
                     strokeWidth="1.6"
                   >
                     {/* Sacred Flame */}
                     <path
                       d="M12 2c-.9 2-1.8 3.5-1.8 5 0 1.2.8 2.2 1.8 2.2s1.8-1 1.8-2.2C13.8 5.5 12.9 4 12 2z"
-                      fill="#734b4f"
+                      fill="#80484e"
                       stroke="none"
                     />
                     {/* Lamp Lip */}
@@ -432,7 +432,7 @@ export default function EventCard({ scrollContainerRef }) {
                     viewBox="0 0 24 24"
                     className="w-[26px] h-[26px]"
                     fill="none"
-                    stroke="#734b4f"
+                    stroke="#80484e"
                     strokeWidth="1.6"
                   >
                     {/* Ring 1 (with diamond) */}
@@ -440,7 +440,7 @@ export default function EventCard({ scrollContainerRef }) {
                     {/* Solitaire diamond atop Ring 1 */}
                     <path
                       d="M9 7.2l-1.5 1.8h3z"
-                      fill="#734b4f"
+                      fill="#80484e"
                       stroke="none"
                     />
                     {/* Ring 2 (interlocking) */}
@@ -456,8 +456,8 @@ export default function EventCard({ scrollContainerRef }) {
                   <svg
                     viewBox="0 0 24 24"
                     className="w-[23px] h-[23px]"
-                    fill="#734b4f"
-                    stroke="#734b4f"
+                    fill="#80484e"
+                    stroke="#80484e"
                     strokeWidth="0.6"
                   >
                     {/* Fork */}
@@ -483,10 +483,10 @@ export default function EventCard({ scrollContainerRef }) {
                   variants={eventDetailSlideVariants}
                   className="flex flex-col leading-tight"
                 >
-                  <h3 className="font-cormorant font-bold uppercase tracking-[0.06em] text-[15.5px] sm:text-[17px] text-[#6a3d42]">
+                  <h3 className="font-cormorant font-bold uppercase tracking-[0.06em] text-[15.5px] sm:text-[17px] text-[#80484e]">
                     TILAK
                   </h3>
-                  <span className="font-cormorant font-bold text-[14.5px] sm:text-[15.5px] text-[#734b4f]">
+                  <span className="font-cormorant font-bold text-[14.5px] sm:text-[15.5px] text-[#80484e]">
                     5:00 pm
                   </span>
                 </motion.div>
@@ -496,10 +496,10 @@ export default function EventCard({ scrollContainerRef }) {
                   variants={eventDetailSlideVariants}
                   className="flex flex-col leading-tight"
                 >
-                  <h3 className="font-cormorant font-bold uppercase tracking-[0.06em] text-[15.5px] sm:text-[17px] text-[#6a3d42]">
+                  <h3 className="font-cormorant font-bold uppercase tracking-[0.06em] text-[15.5px] sm:text-[17px] text-[#80484e]">
                     ENGAGEMENT
                   </h3>
-                  <span className="font-cormorant font-bold text-[14.5px] sm:text-[15.5px] text-[#734b4f]">
+                  <span className="font-cormorant font-bold text-[14.5px] sm:text-[15.5px] text-[#80484e]">
                     7:00 pm
                   </span>
                 </motion.div>
@@ -509,7 +509,7 @@ export default function EventCard({ scrollContainerRef }) {
                   variants={eventDetailSlideVariants}
                   className="flex flex-col leading-tight"
                 >
-                  <span className="font-cormorant italic font-bold text-[15.5px] sm:text-[17px] text-[#734b4f]">
+                  <span className="font-cormorant italic font-bold text-[15.5px] sm:text-[17px] text-[#80484e]">
                     Followed by dinner
                   </span>
                 </motion.div>
@@ -533,24 +533,24 @@ export default function EventCard({ scrollContainerRef }) {
             {/* Map Pin Icon */}
             <motion.div
               variants={pinVariants}
-              className="mb-1 text-[#6a3d42] group-hover:scale-115 group-hover:text-[#8a424a] transition-all duration-200"
+              className="mb-1 text-[#80484e] group-hover:scale-115 group-hover:text-[#52252a] transition-all duration-200"
             >
               <svg
                 viewBox="0 0 24 24"
-                className="w-[20px] h-[20px] fill-[#6a3d42] text-[#6a3d42]"
+                className="w-[20px] h-[20px] fill-[#80484e] text-[#80484e]"
               >
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
               </svg>
             </motion.div>
             <motion.p
               variants={textItemVariants}
-              className="font-cormorant font-bold text-[16px] sm:text-[17.5px] text-[#70484c] group-hover:text-[#52252a] group-hover:underline underline-offset-4 decoration-[#bfa682]/60 transition-colors leading-tight"
+              className="font-cormorant font-bold text-[16px] sm:text-[17.5px] text-[#80484e] group-hover:text-[#52252a] group-hover:underline underline-offset-4 decoration-[#bfa682]/60 transition-colors leading-tight"
             >
               Poolside, Hotel Maurya,
             </motion.p>
             <motion.p
               variants={textItemVariants}
-              className="font-cormorant font-bold text-[16px] sm:text-[17.5px] text-[#70484c] group-hover:text-[#52252a] group-hover:underline underline-offset-4 decoration-[#bfa682]/60 transition-colors leading-tight"
+              className="font-cormorant font-bold text-[16px] sm:text-[17.5px] text-[#80484e] group-hover:text-[#52252a] group-hover:underline underline-offset-4 decoration-[#bfa682]/60 transition-colors leading-tight"
             >
               Patna
             </motion.p>
@@ -580,7 +580,7 @@ export default function EventCard({ scrollContainerRef }) {
               variants={taglineVariants}
               className="pb-0.5"
             >
-              <p className="font-cormorant font-bold text-[20px] sm:text-[22px] text-[#6a3d42] tracking-wide leading-none">
+              <p className="font-cormorant font-bold text-[20px] sm:text-[22px] text-[#80484e] tracking-wide leading-none">
                 Reflections of our love
               </p>
             </motion.div>
