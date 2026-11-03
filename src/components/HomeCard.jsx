@@ -149,7 +149,7 @@ export default function HomeCard({ scrollContainerRef }) {
   return (
     <div
       ref={cardRef}
-      className="absolute top-[9.2%] left-1/2 -translate-x-1/2 w-[79.3%] h-[81.3%] z-20 select-none gpu-layer"
+      className="absolute top-[10.2%] left-1/2 -translate-x-1/2 w-[79.3%] h-[79.6%] z-20 select-none gpu-layer"
       style={{
         transform: 'translate3d(-50%, 0, 0)',
         backfaceVisibility: 'hidden',
@@ -158,7 +158,7 @@ export default function HomeCard({ scrollContainerRef }) {
     >
       {/* Main Card Surface with Symmetrical Appear & Disappear Animations */}
       <motion.div
-        className="relative w-full h-full overflow-hidden flex flex-col items-center justify-between px-4 sm:px-5 pt-5 sm:pt-6 pb-5 sm:pb-6 text-center"
+        className="relative w-full h-full overflow-hidden flex flex-col items-center justify-between px-3.5 sm:px-5 pt-3.5 sm:pt-6 pb-3 sm:pb-6 text-center"
         variants={cardVariants}
         initial="hidden"
         animate={isInView ? 'visible' : 'hidden'}
@@ -194,15 +194,15 @@ export default function HomeCard({ scrollContainerRef }) {
           }}
         />
 
-        {/* Content Container with Cascading Staggered Children */}
+        {/* Content Container with Dynamic Equilibrium Spacing Across All Viewports */}
         <motion.div
-          className="relative z-10 w-full h-full flex flex-col items-center justify-between"
+          className="relative z-10 w-full h-full flex flex-col items-center justify-between py-0.5 sm:py-1"
           variants={contentStaggerVariants}
         >
-          {/* Top Rose Gold SS Monogram Logo with 3D Embossed Paper Shadow */}
+          {/* Block 1: Top Rose Gold SS Monogram Logo */}
           <motion.div
             variants={logoVariants}
-            className="pt-0 shrink-0 flex items-center justify-center"
+            className="mt-0 sm:pt-0.5 shrink-0 flex items-center justify-center"
           >
             <img
               src={logoImg}
@@ -210,7 +210,7 @@ export default function HomeCard({ scrollContainerRef }) {
               loading="eager"
               fetchPriority="high"
               decoding="sync"
-              className="w-[138px] sm:w-[148px] h-auto object-contain select-none pointer-events-none"
+              className="w-[94px] sm:w-[116px] h-auto object-contain select-none pointer-events-none"
               style={{
                 filter: `
                   drop-shadow(0px 1.2px 1.8px rgba(55, 22, 16, 0.5))
@@ -222,96 +222,92 @@ export default function HomeCard({ scrollContainerRef }) {
             />
           </motion.div>
 
-          {/* Blessings & Host Families Block (Bold & Staggered) */}
+          {/* Block 2: Blessings & Host Families Block */}
           <motion.div
             variants={textItemVariants}
-            className="flex flex-col items-center gap-0.5 my-auto w-full px-0.5"
+            className="flex flex-col items-center w-full px-1"
           >
             <motion.p
               variants={textItemVariants}
-              className="font-cormorant italic font-bold text-[13.5px] sm:text-[14.5px] text-[#734b4f] leading-none mb-1"
+              className="font-cormorant italic font-bold text-[14px] sm:text-[16px] text-[#734b4f] leading-none mb-1"
             >
               With the blessings of
             </motion.p>
 
             <motion.div
               variants={textItemVariants}
-              className="font-cormorant font-bold uppercase tracking-[0.03em] text-[13px] sm:text-[14.5px] text-[#6d4246] my-0.5 leading-tight text-center"
+              className="font-cormorant font-bold uppercase tracking-[0.04em] text-[13.5px] sm:text-[15.5px] text-[#6d4246] leading-tight text-center my-0.5"
             >
               <p>LATE SHRI SATISH KUMAR</p>
-              <p className="font-cormorant italic font-bold text-[13px] sm:text-[14.5px] text-[#734b4f] my-0.5 normal-case">&amp;</p>
+              <p className="font-cormorant italic font-bold text-[13.5px] sm:text-[15.5px] text-[#734b4f] my-0.5 normal-case">&amp;</p>
               <p>SMT. RITA KESHRI</p>
             </motion.div>
 
             <motion.div
               variants={textItemVariants}
-              className="font-cormorant text-[15px] sm:text-[16px] text-[#72484c] leading-[1.35] font-bold mt-1"
+              className="font-cormorant text-[15px] sm:text-[17px] text-[#72484c] leading-[1.28] font-bold mt-1.5 sm:mt-2.5 text-center"
             >
-              <p>Together with their loved ones,</p>
-              <p>The Keshri family requests the honour of</p>
+              <p>together with their loved ones,</p>
+              <p>the Keshri family requests the honour of</p>
               <p>your presence at the</p>
             </motion.div>
           </motion.div>
 
-          {/* Event Title (Bold & Majestic Entrance) */}
-          <motion.div
-            variants={heroTitleVariants}
-            className="my-auto py-0.5"
-          >
-            <h1 className="font-cormorant font-bold text-[33px] sm:text-[37px] text-[#6a3d42] tracking-wide leading-none">
-              Engagement
-            </h1>
-          </motion.div>
-
-          {/* Relationship Subtitle (Bold & Staggered) */}
-          <motion.div
-            variants={textItemVariants}
-            className="my-auto"
-          >
-            <p className="font-cormorant italic font-bold text-[15.5px] sm:text-[16.5px] text-[#734b4f] leading-none">
-              of their beloved granddaughter
-            </p>
-          </motion.div>
-
-          {/* Bride's Name (Bold & Majestic Entrance) */}
-          <motion.div
-            variants={heroTitleVariants}
-            className="my-auto py-0.5"
-          >
-            <h2 className="font-cormorant font-bold text-[30px] sm:text-[34px] uppercase tracking-[0.22em] text-[#6a3d42] leading-none pl-[0.22em]">
-              SAKSHI
-            </h2>
-          </motion.div>
-
-          {/* Parents & Siblings Lineage (Bold & Staggered) */}
-          <motion.div
-            variants={textItemVariants}
-            className="flex flex-col items-center gap-0.5 my-auto w-full px-1"
-          >
-            <p className="font-cormorant text-[13.5px] sm:text-[14.5px] font-bold text-[#734b4f] leading-tight whitespace-nowrap">
-              (D/o Mrs. Sangeeta &amp; Mr. Shekhar Keshri)
-            </p>
-            <p className="font-cormorant text-[13.5px] sm:text-[14.5px] font-bold text-[#734b4f] leading-tight whitespace-nowrap">
-              (Sister of Shradha &amp; Shreshth Keshri)
-            </p>
-          </motion.div>
-
-          {/* Delicate Antique Gold Bottom Ornament Divider */}
-          <motion.div
-            variants={ornamentVariants}
-            className="pt-1 pb-0.5 flex items-center justify-center gap-1.5 w-[42%] opacity-80"
-          >
-            <div className="h-[0.75px] flex-1 bg-gradient-to-r from-transparent via-[#bfa682] to-[#bfa682]" />
-            <div className="w-[3.5px] h-[3.5px] rotate-45 bg-[#bfa682]" />
-            <svg
-              className="w-3 h-3 fill-[#bfa682] text-[#bfa682] shrink-0"
-              viewBox="0 0 24 24"
+          {/* Block 3: Hero Climax (Engagement & Bride) */}
+          <div className="flex flex-col items-center w-full">
+            <motion.h1
+              variants={heroTitleVariants}
+              className="font-cormorant font-bold text-[34px] sm:text-[42px] text-[#6a3d42] tracking-wide leading-none mb-1 sm:mb-1.5"
             >
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-            </svg>
-            <div className="w-[3.5px] h-[3.5px] rotate-45 bg-[#bfa682]" />
-            <div className="h-[0.75px] flex-1 bg-gradient-to-l from-transparent via-[#bfa682] to-[#bfa682]" />
-          </motion.div>
+              Engagement
+            </motion.h1>
+
+            <motion.p
+              variants={textItemVariants}
+              className="font-cormorant italic font-bold text-[15.5px] sm:text-[18px] text-[#734b4f] leading-none mb-1.5 sm:mb-2"
+            >
+              of their beloved granddaughter
+            </motion.p>
+
+            <motion.h2
+              variants={heroTitleVariants}
+              className="font-cormorant font-bold text-[30px] sm:text-[38px] uppercase tracking-[0.22em] text-[#6a3d42] leading-none pl-[0.22em]"
+            >
+              SAKSHI
+            </motion.h2>
+          </div>
+
+          {/* Block 4: Lineage & Bottom Ornament */}
+          <div className="flex flex-col items-center w-full px-1">
+            <motion.div
+              variants={textItemVariants}
+              className="flex flex-col items-center gap-0.5 w-full"
+            >
+              <p className="font-cormorant text-[13px] sm:text-[15px] font-bold text-[#734b4f] leading-tight whitespace-nowrap">
+                (D/o Mrs. Sangeeta &amp; Mr. Shekhar Keshri)
+              </p>
+              <p className="font-cormorant text-[13px] sm:text-[15px] font-bold text-[#734b4f] leading-tight whitespace-nowrap">
+                (Sister of Shradha &amp; Shreshth Keshri)
+              </p>
+            </motion.div>
+
+            {/* Delicate Antique Gold Bottom Ornament Divider */}
+            <motion.div
+              variants={ornamentVariants}
+              className="mt-2 sm:mt-3 flex items-center justify-center gap-1.5 w-[42%] opacity-80"
+            >
+              <div className="h-[0.75px] flex-1 bg-gradient-to-r from-transparent via-[#bfa682] to-[#bfa682]" />
+              <div className="w-[3.5px] h-[3.5px] rotate-45 bg-[#bfa682]" />
+              <svg
+                className="w-3 h-3 fill-[#bfa682] text-[#bfa682] shrink-0"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+              <div className="w-[3.5px] h-[3.5px] rotate-45 bg-[#bfa682]" />
+              <div className="h-[0.75px] flex-1 bg-gradient-to-l from-transparent via-[#bfa682] to-[#bfa682]" />
+            </motion.div>
+          </div>
 
         </motion.div>
       </motion.div>
