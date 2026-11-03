@@ -108,6 +108,36 @@ export default function App() {
 
             {/* Event Itinerary Card */}
             <EventCard scrollContainerRef={scrollContainerRef} />
+
+            {/* Minimal Snapivite Instagram Redirect Link (Bottom Center of Event Page) */}
+            <div className="absolute bottom-2.5 sm:bottom-3.5 left-1/2 -translate-x-1/2 z-30 pointer-events-auto select-none">
+              <a
+                href="https://www.instagram.com/snapivite/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Follow Snapivite on Instagram"
+                className="inline-flex items-center gap-1.5 text-[#80484e]/75 hover:text-[#52252a] hover:opacity-100 transition-all duration-300 no-underline group cursor-pointer py-1 px-2.5"
+              >
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-3 h-3 text-[#80484e]/80 group-hover:text-[#52252a] transition-colors"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+                <span className="font-cormorant text-[12.5px] sm:text-[13.5px] font-semibold tracking-[0.14em] lowercase">
+                  snapivite
+                </span>
+              </a>
+            </div>
           </section>
         </main>
       </IPhoneFrame>
