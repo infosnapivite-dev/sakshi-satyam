@@ -287,7 +287,7 @@ export default function EventCard({ scrollContainerRef }) {
     >
       {/* Main Card Surface with Symmetrical Appear & Disappear Animations */}
       <motion.div
-        className="relative w-full h-full overflow-hidden flex flex-col items-center justify-between px-3.5 sm:px-5 pt-3.5 sm:pt-6 pb-3 sm:pb-6 text-center"
+        className="relative w-full h-full overflow-hidden flex flex-col items-center justify-between px-4 sm:px-5 pt-5 sm:pt-6 pb-5 sm:pb-6 text-center"
         variants={cardVariants}
         initial="hidden"
         animate={isInView ? 'visible' : 'hidden'}
@@ -323,14 +323,14 @@ export default function EventCard({ scrollContainerRef }) {
           }}
         />
 
-        {/* Content Container with Dynamic Equilibrium Spacing Across All Viewports */}
+        {/* Content Container with Cascading Staggered Children */}
         <motion.div
-          className="relative z-10 w-full h-full flex flex-col items-center justify-between py-0.5 sm:py-1"
+          className="relative z-10 w-full h-full flex flex-col items-center justify-center gap-5 sm:gap-6 py-1"
           variants={contentStaggerVariants}
         >
           {/* Header Block: Couple Names & Flourish matching Reference Typography */}
           <div
-            className="flex flex-col items-center w-full -mt-2 sm:-mt-5.5"
+            className="flex flex-col items-center w-full -mt-6 sm:-mt-5.5"
             role="heading"
             aria-level="1"
             aria-label="Sakshi and Satyam"
@@ -340,7 +340,7 @@ export default function EventCard({ scrollContainerRef }) {
               variants={heroTitleVariants}
               src={sakshiTitleImg}
               alt="Sakshi"
-              className="w-[138px] sm:w-[164px] h-auto object-contain select-none pointer-events-none drop-shadow-sm mx-auto"
+              className="w-[148px] sm:w-[164px] h-auto object-contain select-none pointer-events-none drop-shadow-sm mx-auto"
               draggable="false"
             />
 
@@ -349,7 +349,7 @@ export default function EventCard({ scrollContainerRef }) {
               variants={flourishVariants}
               src={ampersandDividerImg}
               alt="&"
-              className="w-[178px] sm:w-[210px] h-auto object-contain my-1.5 opacity-90 select-none pointer-events-none origin-center mx-auto"
+              className="w-[190px] sm:w-[210px] h-auto object-contain my-1.5 opacity-90 select-none pointer-events-none origin-center mx-auto"
               draggable="false"
             />
 
@@ -358,7 +358,7 @@ export default function EventCard({ scrollContainerRef }) {
               variants={heroTitleVariants}
               src={satyamTitleImg}
               alt="Satyam"
-              className="w-[152px] sm:w-[180px] h-auto object-contain select-none pointer-events-none drop-shadow-sm mx-auto"
+              className="w-[163px] sm:w-[180px] h-auto object-contain select-none pointer-events-none drop-shadow-sm mx-auto"
               draggable="false"
             />
           </div>
@@ -370,15 +370,15 @@ export default function EventCard({ scrollContainerRef }) {
           >
             <motion.p
               variants={textItemVariants}
-              className="font-cormorant font-bold text-[16px] sm:text-[19px] text-[#6d4246] tracking-wide leading-none mb-1"
+              className="font-cormorant font-bold text-[17.5px] sm:text-[19px] text-[#6d4246] tracking-wide leading-none mb-1"
             >
               Sunday
             </motion.p>
             <motion.h2
               variants={textItemVariants}
-              className="font-cormorant font-bold uppercase tracking-[0.08em] text-[15.5px] sm:text-[18px] text-[#6a3d42] leading-none"
+              className="font-cormorant font-bold uppercase tracking-[0.08em] text-[16.5px] sm:text-[18px] text-[#6a3d42] leading-none"
             >
-              13<span className="text-[11px] sm:text-[12px] align-super uppercase font-bold">th</span> DECEMBER 2026
+              13<span className="text-[11.5px] sm:text-[12px] align-super uppercase font-bold">th</span> DECEMBER 2026
             </motion.h2>
           </motion.div>
 
@@ -390,7 +390,7 @@ export default function EventCard({ scrollContainerRef }) {
             <div className="flex items-center justify-center gap-4 max-w-[295px]">
               
               {/* Left Column: 3 Line-Art Icons */}
-              <div className="flex flex-col items-center justify-between h-[114px] sm:h-[126px] text-[#734b4f]">
+              <div className="flex flex-col items-center justify-between h-[122px] sm:h-[126px] text-[#734b4f]">
                 
                 {/* 1. Diya / Sacred Aarti Lamp for Tilak */}
                 <motion.div
@@ -399,7 +399,7 @@ export default function EventCard({ scrollContainerRef }) {
                 >
                   <svg
                     viewBox="0 0 24 24"
-                    className="w-[24px] h-[24px]"
+                    className="w-[25px] h-[25px]"
                     fill="none"
                     stroke="#734b4f"
                     strokeWidth="1.6"
@@ -430,7 +430,7 @@ export default function EventCard({ scrollContainerRef }) {
                 >
                   <svg
                     viewBox="0 0 24 24"
-                    className="w-[25px] h-[25px]"
+                    className="w-[26px] h-[26px]"
                     fill="none"
                     stroke="#734b4f"
                     strokeWidth="1.6"
@@ -455,7 +455,7 @@ export default function EventCard({ scrollContainerRef }) {
                 >
                   <svg
                     viewBox="0 0 24 24"
-                    className="w-[22px] h-[22px]"
+                    className="w-[23px] h-[23px]"
                     fill="#734b4f"
                     stroke="#734b4f"
                     strokeWidth="0.6"
@@ -472,21 +472,21 @@ export default function EventCard({ scrollContainerRef }) {
               {/* Center Vertical Gold Divider Line (Grows downward smoothly) */}
               <motion.div
                 variants={verticalLineVariants}
-                className="w-[1.2px] h-[114px] sm:h-[126px] bg-gradient-to-b from-[#d5bea0]/40 via-[#bfa682] to-[#d5bea0]/40 shrink-0 origin-top"
+                className="w-[1.2px] h-[122px] sm:h-[126px] bg-gradient-to-b from-[#d5bea0]/40 via-[#bfa682] to-[#d5bea0]/40 shrink-0 origin-top"
               />
 
               {/* Right Column: Event Titles & Timings */}
-              <div className="flex flex-col justify-between text-left h-[114px] sm:h-[126px]">
+              <div className="flex flex-col justify-between text-left h-[122px] sm:h-[126px]">
                 
                 {/* 1. Tilak */}
                 <motion.div
                   variants={eventDetailSlideVariants}
                   className="flex flex-col leading-tight"
                 >
-                  <h3 className="font-cormorant font-bold uppercase tracking-[0.06em] text-[14px] sm:text-[17px] text-[#6a3d42]">
+                  <h3 className="font-cormorant font-bold uppercase tracking-[0.06em] text-[15.5px] sm:text-[17px] text-[#6a3d42]">
                     TILAK
                   </h3>
-                  <span className="font-cormorant font-bold text-[13.5px] sm:text-[15.5px] text-[#734b4f]">
+                  <span className="font-cormorant font-bold text-[14.5px] sm:text-[15.5px] text-[#734b4f]">
                     5:00 pm
                   </span>
                 </motion.div>
@@ -496,10 +496,10 @@ export default function EventCard({ scrollContainerRef }) {
                   variants={eventDetailSlideVariants}
                   className="flex flex-col leading-tight"
                 >
-                  <h3 className="font-cormorant font-bold uppercase tracking-[0.06em] text-[14px] sm:text-[17px] text-[#6a3d42]">
+                  <h3 className="font-cormorant font-bold uppercase tracking-[0.06em] text-[15.5px] sm:text-[17px] text-[#6a3d42]">
                     ENGAGEMENT
                   </h3>
-                  <span className="font-cormorant font-bold text-[13.5px] sm:text-[15.5px] text-[#734b4f]">
+                  <span className="font-cormorant font-bold text-[14.5px] sm:text-[15.5px] text-[#734b4f]">
                     7:00 pm
                   </span>
                 </motion.div>
@@ -509,7 +509,7 @@ export default function EventCard({ scrollContainerRef }) {
                   variants={eventDetailSlideVariants}
                   className="flex flex-col leading-tight"
                 >
-                  <span className="font-cormorant italic font-bold text-[14px] sm:text-[17px] text-[#734b4f]">
+                  <span className="font-cormorant italic font-bold text-[15.5px] sm:text-[17px] text-[#734b4f]">
                     Followed by dinner
                   </span>
                 </motion.div>
@@ -537,20 +537,20 @@ export default function EventCard({ scrollContainerRef }) {
             >
               <svg
                 viewBox="0 0 24 24"
-                className="w-[19px] h-[19px] fill-[#6a3d42] text-[#6a3d42]"
+                className="w-[20px] h-[20px] fill-[#6a3d42] text-[#6a3d42]"
               >
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
               </svg>
             </motion.div>
             <motion.p
               variants={textItemVariants}
-              className="font-cormorant font-bold text-[15px] sm:text-[17.5px] text-[#70484c] group-hover:text-[#52252a] group-hover:underline underline-offset-4 decoration-[#bfa682]/60 transition-colors leading-tight"
+              className="font-cormorant font-bold text-[16px] sm:text-[17.5px] text-[#70484c] group-hover:text-[#52252a] group-hover:underline underline-offset-4 decoration-[#bfa682]/60 transition-colors leading-tight"
             >
               Poolside, Hotel Maurya,
             </motion.p>
             <motion.p
               variants={textItemVariants}
-              className="font-cormorant font-bold text-[15px] sm:text-[17.5px] text-[#70484c] group-hover:text-[#52252a] group-hover:underline underline-offset-4 decoration-[#bfa682]/60 transition-colors leading-tight"
+              className="font-cormorant font-bold text-[16px] sm:text-[17.5px] text-[#70484c] group-hover:text-[#52252a] group-hover:underline underline-offset-4 decoration-[#bfa682]/60 transition-colors leading-tight"
             >
               Patna
             </motion.p>
@@ -580,7 +580,7 @@ export default function EventCard({ scrollContainerRef }) {
               variants={taglineVariants}
               className="pb-0.5"
             >
-              <p className="font-cormorant font-bold text-[18.5px] sm:text-[22px] text-[#6a3d42] tracking-wide leading-none">
+              <p className="font-cormorant font-bold text-[20px] sm:text-[22px] text-[#6a3d42] tracking-wide leading-none">
                 Reflections of our love
               </p>
             </motion.div>

@@ -158,7 +158,7 @@ export default function HomeCard({ scrollContainerRef }) {
     >
       {/* Main Card Surface with Symmetrical Appear & Disappear Animations */}
       <motion.div
-        className="relative w-full h-full overflow-hidden flex flex-col items-center justify-between px-3.5 sm:px-5 pt-3.5 sm:pt-6 pb-3 sm:pb-6 text-center"
+        className="relative w-full h-full overflow-hidden flex flex-col items-center justify-between px-4 sm:px-5 pt-5 sm:pt-6 pb-5 sm:pb-6 text-center"
         variants={cardVariants}
         initial="hidden"
         animate={isInView ? 'visible' : 'hidden'}
@@ -194,15 +194,15 @@ export default function HomeCard({ scrollContainerRef }) {
           }}
         />
 
-        {/* Content Container with Dynamic Equilibrium Spacing Across All Viewports */}
+        {/* Content Container with Cascading Staggered Children */}
         <motion.div
-          className="relative z-10 w-full h-full flex flex-col items-center justify-between py-0.5 sm:py-1"
+          className="relative z-10 w-full h-full flex flex-col items-center justify-center gap-6 sm:gap-7 py-1"
           variants={contentStaggerVariants}
         >
-          {/* Block 1: Top Rose Gold SS Monogram Logo */}
+          {/* Top Rose Gold SS Monogram Logo with 3D Embossed Paper Shadow */}
           <motion.div
             variants={logoVariants}
-            className="mt-0 sm:pt-0.5 shrink-0 flex items-center justify-center"
+            className="-mt-3.5 sm:mt-0 sm:pt-0.5 mb-0.5 sm:mb-0 shrink-0 flex items-center justify-center"
           >
             <img
               src={logoImg}
@@ -210,7 +210,7 @@ export default function HomeCard({ scrollContainerRef }) {
               loading="eager"
               fetchPriority="high"
               decoding="sync"
-              className="w-[94px] sm:w-[116px] h-auto object-contain select-none pointer-events-none"
+              className="w-[108px] sm:w-[116px] h-auto object-contain select-none pointer-events-none"
               style={{
                 filter: `
                   drop-shadow(0px 1.2px 1.8px rgba(55, 22, 16, 0.5))
@@ -229,23 +229,23 @@ export default function HomeCard({ scrollContainerRef }) {
           >
             <motion.p
               variants={textItemVariants}
-              className="font-cormorant italic font-bold text-[14px] sm:text-[16px] text-[#734b4f] leading-none mb-1"
+              className="font-cormorant italic font-bold text-[15px] sm:text-[16px] text-[#734b4f] leading-none mb-1"
             >
               With the blessings of
             </motion.p>
 
             <motion.div
               variants={textItemVariants}
-              className="font-cormorant font-bold uppercase tracking-[0.04em] text-[13.5px] sm:text-[15.5px] text-[#6d4246] leading-tight text-center my-0.5"
+              className="font-cormorant font-bold uppercase tracking-[0.04em] text-[14.5px] sm:text-[15.5px] text-[#6d4246] leading-tight text-center my-0.5"
             >
               <p>LATE SHRI SATISH KUMAR</p>
-              <p className="font-cormorant italic font-bold text-[13.5px] sm:text-[15.5px] text-[#734b4f] my-0.5 normal-case">&amp;</p>
+              <p className="font-cormorant italic font-bold text-[14.5px] sm:text-[15.5px] text-[#734b4f] my-0.5 normal-case">&amp;</p>
               <p>SMT. RITA KESHRI</p>
             </motion.div>
 
             <motion.div
               variants={textItemVariants}
-              className="font-cormorant text-[15px] sm:text-[17px] text-[#72484c] leading-[1.28] font-bold mt-1.5 sm:mt-2.5 text-center"
+              className="font-cormorant text-[16px] sm:text-[17px] text-[#72484c] leading-[1.32] font-bold mt-2 sm:mt-2.5 text-center"
             >
               <p>together with their loved ones,</p>
               <p>the Keshri family requests the honour of</p>
@@ -257,21 +257,21 @@ export default function HomeCard({ scrollContainerRef }) {
           <div className="flex flex-col items-center w-full">
             <motion.h1
               variants={heroTitleVariants}
-              className="font-cormorant font-bold text-[34px] sm:text-[42px] text-[#6a3d42] tracking-wide leading-none mb-1 sm:mb-1.5"
+              className="font-cormorant font-bold text-[38px] sm:text-[42px] text-[#6a3d42] tracking-wide leading-none mb-1.5"
             >
               Engagement
             </motion.h1>
 
             <motion.p
               variants={textItemVariants}
-              className="font-cormorant italic font-bold text-[15.5px] sm:text-[18px] text-[#734b4f] leading-none mb-1.5 sm:mb-2"
+              className="font-cormorant italic font-bold text-[17px] sm:text-[18px] text-[#734b4f] leading-none mb-2"
             >
               of their beloved granddaughter
             </motion.p>
 
             <motion.h2
               variants={heroTitleVariants}
-              className="font-cormorant font-bold text-[30px] sm:text-[38px] uppercase tracking-[0.22em] text-[#6a3d42] leading-none pl-[0.22em]"
+              className="font-cormorant font-bold text-[34px] sm:text-[38px] uppercase tracking-[0.22em] text-[#6a3d42] leading-none pl-[0.22em]"
             >
               SAKSHI
             </motion.h2>
@@ -283,10 +283,10 @@ export default function HomeCard({ scrollContainerRef }) {
               variants={textItemVariants}
               className="flex flex-col items-center gap-0.5 w-full"
             >
-              <p className="font-cormorant text-[13px] sm:text-[15px] font-bold text-[#734b4f] leading-tight whitespace-nowrap">
+              <p className="font-cormorant text-[14px] sm:text-[15px] font-bold text-[#734b4f] leading-tight whitespace-nowrap">
                 (D/o Mrs. Sangeeta &amp; Mr. Shekhar Keshri)
               </p>
-              <p className="font-cormorant text-[13px] sm:text-[15px] font-bold text-[#734b4f] leading-tight whitespace-nowrap">
+              <p className="font-cormorant text-[14px] sm:text-[15px] font-bold text-[#734b4f] leading-tight whitespace-nowrap">
                 (Sister of Shradha &amp; Shreshth Keshri)
               </p>
             </motion.div>
@@ -294,7 +294,7 @@ export default function HomeCard({ scrollContainerRef }) {
             {/* Delicate Antique Gold Bottom Ornament Divider */}
             <motion.div
               variants={ornamentVariants}
-              className="mt-2 sm:mt-3 flex items-center justify-center gap-1.5 w-[42%] opacity-80"
+              className="mt-2.5 sm:mt-3 flex items-center justify-center gap-1.5 w-[42%] opacity-80"
             >
               <div className="h-[0.75px] flex-1 bg-gradient-to-r from-transparent via-[#bfa682] to-[#bfa682]" />
               <div className="w-[3.5px] h-[3.5px] rotate-45 bg-[#bfa682]" />
