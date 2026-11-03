@@ -211,7 +211,7 @@ export default function OpeningAnimation({ onEnded }) {
               className="absolute pointer-events-none select-none z-10 flex flex-col items-center text-center"
               style={{
                 left: '50%',
-                top: 'calc(63.8% - 64px)',
+                top: 'calc(63.8% - 99px)',
                 transform: 'translate(-50%, -100%)',
                 width: '90%',
                 maxWidth: '260px',
@@ -299,7 +299,7 @@ export default function OpeningAnimation({ onEnded }) {
               className="absolute pointer-events-none select-none z-10 flex flex-col items-center text-center"
               style={{
                 left: '50%',
-                top: 'calc(63.8% + 68px)',
+                top: 'calc(63.8% + 108px)',
                 transform: 'translate(-50%, 0)',
               }}
             >
