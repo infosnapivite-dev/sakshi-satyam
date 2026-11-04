@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import videoSrc from '../assets/opening-animation.mp4';
 import waxSealImg from '../assets/floral-wax-seal.png';
+import invitationSealedImg from '../assets/invitation-sealed-with-love.png';
 
 /**
  * Synthesizes a crisp, physical wax-seal crack/snap sound via Web Audio API.
@@ -327,6 +328,36 @@ export default function OpeningAnimation({ onEnded }) {
           </div>
         )}
       </AnimatePresence>
+
+      {/* Permanent Post-Opening Text: "An invitation, sealed with love."
+          Smoothly replaces "Click to open" once the seal is clicked, remaining permanently visible */}
+      {isBreaking && (
+        <div
+          className="absolute pointer-events-none select-none z-10 flex flex-col items-center text-center left-1/2 -translate-x-1/2"
+          style={{
+            top: 'calc(63.8% + 72px)',
+            width: '260px',
+          }}
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 8, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{
+              delay: 0.22,
+              duration: 0.75,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            className="w-full flex flex-col items-center justify-center"
+          >
+            <img
+              src={invitationSealedImg}
+              alt="An invitation, sealed with love."
+              className="w-[165px] sm:w-[182px] h-auto object-contain select-none pointer-events-none drop-shadow-[0_2px_8px_rgba(102,48,55,0.12)] mx-auto"
+              draggable="false"
+            />
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 }
