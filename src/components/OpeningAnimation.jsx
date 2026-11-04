@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import videoSrc from '../assets/opening-animation.mp4';
-import waxSealImg from '../assets/wax-seal-maroon.png';
+import waxSealImg from '../assets/floral-wax-seal.png';
 
 /**
  * Synthesizes a crisp, physical wax-seal crack/snap sound via Web Audio API.
@@ -206,15 +206,15 @@ export default function OpeningAnimation({ onEnded }) {
               perspective: '1000px',
             }}
           >
-            {/* Flap Announcement: "A beautiful beginning awaits..." directly on top of the seal */}
+            {/* Flap Announcement: "A beautiful beginning awaits..." centered in top half of envelope */}
             <div
               className="absolute pointer-events-none select-none z-10 flex flex-col items-center text-center"
               style={{
                 left: '50%',
-                top: 'calc(63.8% - 99px)',
-                transform: 'translate(-50%, -100%)',
+                top: '42%',
+                transform: 'translate(-50%, -50%)',
                 width: '90%',
-                maxWidth: '260px',
+                maxWidth: '320px',
               }}
             >
               <motion.div
@@ -223,24 +223,24 @@ export default function OpeningAnimation({ onEnded }) {
                 transition={{ duration: isBreaking ? 0.32 : 0.8, ease: 'easeOut' }}
                 className="w-full flex flex-col items-center"
               >
-                <p className="font-cormorant font-semibold text-[14px] sm:text-[15.5px] text-[#80484e] leading-[1.2] tracking-[0.025em]">
+                <p className="font-cormorant font-semibold text-[20px] sm:text-[22px] text-[#80484e] leading-[1.22] tracking-[0.025em]">
                   A beautiful beginning
                 </p>
-                <p className="font-cormorant font-semibold text-[14px] sm:text-[15.5px] text-[#80484e] leading-[1.2] tracking-[0.025em] mt-0.5">
+                <p className="font-cormorant font-semibold text-[20px] sm:text-[22px] text-[#80484e] leading-[1.22] tracking-[0.025em] mt-0.5">
                   awaits...
                 </p>
 
                 {/* Delicate Gold Heart Ornament Divider */}
-                <div className="flex items-center justify-center gap-1.5 w-[102px] sm:w-[114px] opacity-80 mt-1 sm:mt-1.5">
+                <div className="flex items-center justify-center gap-1.5 w-[140px] sm:w-[155px] opacity-80 mt-2 sm:mt-2.5">
                   <div className="h-[0.75px] flex-1 bg-gradient-to-r from-transparent via-[#bfa682] to-[#bfa682]" />
-                  <div className="w-[2px] h-[2px] rotate-45 bg-[#bfa682]" />
+                  <div className="w-[3px] h-[3px] rotate-45 bg-[#bfa682]" />
                   <svg
                     className="w-2.5 h-2.5 fill-[#bfa682] text-[#bfa682] shrink-0"
                     viewBox="0 0 24 24"
                   >
                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                   </svg>
-                  <div className="w-[2px] h-[2px] rotate-45 bg-[#bfa682]" />
+                  <div className="w-[3px] h-[3px] rotate-45 bg-[#bfa682]" />
                   <div className="h-[0.75px] flex-1 bg-gradient-to-l from-transparent via-[#bfa682] to-[#bfa682]" />
                 </div>
               </motion.div>
@@ -268,11 +268,11 @@ export default function OpeningAnimation({ onEnded }) {
                 aria-label="Break seal to open invitation"
                 role="button"
               >
-                {/* Ultra-realistic 3D Wax Seal Image */}
+                {/* Ultra-realistic 3D Floral Wax Seal Image */}
                 <img
                   src={waxSealImg}
                   alt="Sakshi & Satyam Royal Wax Seal"
-                  className="w-full h-full object-contain pointer-events-none select-none drop-shadow-[0_12px_24px_rgba(80,45,38,0.44)]"
+                  className="w-full h-full object-contain pointer-events-none select-none drop-shadow-[0_12px_24px_rgba(72,36,54,0.42)]"
                   draggable="false"
                 />
 
@@ -281,14 +281,14 @@ export default function OpeningAnimation({ onEnded }) {
                   <motion.div
                     animate={{
                       scale: [1, 1.08, 1],
-                      opacity: [0.3, 0.6, 0.3],
+                      opacity: [0.35, 0.65, 0.35],
                     }}
                     transition={{
                       duration: 2.2,
                       repeat: Infinity,
                       ease: 'easeInOut',
                     }}
-                    className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#ae8273]/30 via-[#d4a359]/25 to-transparent blur-md pointer-events-none -z-10"
+                    className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#9b6279]/35 via-[#c99f64]/30 to-transparent blur-md pointer-events-none -z-10"
                   />
                 )}
               </motion.div>

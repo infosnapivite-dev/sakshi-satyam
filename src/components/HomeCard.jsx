@@ -5,14 +5,14 @@ import paperTexture from '../assets/paper-texture.svg';
 import sakshiTitleImg from '../assets/sakshi-title.png';
 
 // Gentle luxury ease curve (velvety editorial deceleration)
-const luxuryEase = [0.22, 1, 0.36, 1];
+const luxuryEase = [0.16, 1, 0.3, 1];
 
 // 1. Main Card Surface Variant (Appear & Disappear)
 const cardVariants = {
   hidden: {
     opacity: 0,
-    scale: 0.94,
-    y: 22,
+    scale: 0.95,
+    y: 28,
     transition: {
       duration: 1.1,
       ease: luxuryEase,
@@ -23,7 +23,7 @@ const cardVariants = {
     scale: 1,
     y: 0,
     transition: {
-      duration: 1.4,
+      duration: 1.7,
       ease: luxuryEase,
     },
   },
@@ -34,15 +34,15 @@ const contentStaggerVariants = {
   hidden: {
     opacity: 0,
     transition: {
-      staggerChildren: 0.06,
+      staggerChildren: 0.05,
       staggerDirection: -1,
     },
   },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.18,
-      delayChildren: 0.3,
+      staggerChildren: 0.16,
+      delayChildren: 0.35,
     },
   },
 };
@@ -143,7 +143,7 @@ export default function HomeCard({ scrollContainerRef }) {
   const cardRef = useRef(null);
   const isInView = useInView(cardRef, {
     root: scrollContainerRef,
-    amount: 0.2,
+    amount: 0.35,
     once: false,
   });
 
@@ -159,7 +159,7 @@ export default function HomeCard({ scrollContainerRef }) {
     >
       {/* Main Card Surface with Symmetrical Appear & Disappear Animations */}
       <motion.div
-        className="relative w-full h-full overflow-hidden flex flex-col items-center justify-between px-4 sm:px-5 pt-5 sm:pt-6 pb-5 sm:pb-6 text-center"
+        className="relative w-full h-full overflow-hidden flex flex-col items-center justify-between px-3 sm:px-5 pt-5 sm:pt-6 pb-5 sm:pb-6 text-center"
         variants={cardVariants}
         initial="hidden"
         animate={isInView ? 'visible' : 'hidden'}
@@ -195,15 +195,15 @@ export default function HomeCard({ scrollContainerRef }) {
           }}
         />
 
-        {/* Content Container with Cascading Staggered Children */}
+        {/* Content Container with Cascading Staggered Children — Equal Balanced Gap Between All Lines */}
         <motion.div
-          className="relative z-10 w-full h-full flex flex-col items-center justify-center gap-6 sm:gap-7 py-1"
+          className="relative z-10 w-full h-full flex flex-col items-center justify-between py-1 sm:py-2 text-center"
           variants={contentStaggerVariants}
         >
-          {/* Top Rose Gold SS Monogram Logo with 3D Embossed Paper Shadow */}
+          {/* 1. Top Rose Gold SS Monogram Logo with 3D Embossed Paper Shadow */}
           <motion.div
             variants={logoVariants}
-            className="-mt-3.5 sm:mt-0 sm:pt-0.5 mb-0.5 sm:mb-0 shrink-0 flex items-center justify-center"
+            className="shrink-0 flex items-center justify-center"
           >
             <img
               src={logoImg}
@@ -211,7 +211,7 @@ export default function HomeCard({ scrollContainerRef }) {
               loading="eager"
               fetchPriority="high"
               decoding="sync"
-              className="w-[108px] sm:w-[116px] h-auto object-contain select-none pointer-events-none"
+              className="w-[100px] sm:w-[108px] h-auto object-contain select-none pointer-events-none"
               style={{
                 filter: `
                   drop-shadow(0px 1.2px 1.8px rgba(55, 22, 16, 0.5))
@@ -223,94 +223,92 @@ export default function HomeCard({ scrollContainerRef }) {
             />
           </motion.div>
 
-          {/* Block 2: Blessings & Host Families Block */}
+          {/* 2. Blessing Intro Line */}
+          <motion.p
+            variants={textItemVariants}
+            className="font-cormorant italic font-bold text-[17.5px] sm:text-[19.5px] text-[#80484e] leading-none text-center"
+          >
+            With the blessings of
+          </motion.p>
+
+          {/* 3. Grandparents Names */}
           <motion.div
             variants={textItemVariants}
-            className="flex flex-col items-center w-full px-1"
+            className="font-cormorant font-bold uppercase tracking-[0.04em] text-[16.5px] sm:text-[18px] text-[#80484e] leading-tight text-center flex flex-col items-center"
           >
-            <motion.p
-              variants={textItemVariants}
-              className="font-cormorant italic font-bold text-[15px] sm:text-[16px] text-[#80484e] leading-none mb-1"
-            >
-              With the blessings of
-            </motion.p>
-
-            <motion.div
-              variants={textItemVariants}
-              className="font-cormorant font-bold uppercase tracking-[0.04em] text-[14.5px] sm:text-[15.5px] text-[#80484e] leading-tight text-center my-0.5"
-            >
-              <p>LATE SHRI SATISH KUMAR</p>
-              <p className="font-cormorant italic font-bold text-[14.5px] sm:text-[15.5px] text-[#80484e] my-0.5 normal-case">&amp;</p>
-              <p>SMT. RITA KESHRI</p>
-            </motion.div>
-
-            <motion.div
-              variants={textItemVariants}
-              className="font-cormorant text-[16px] sm:text-[17px] text-[#80484e] leading-[1.32] font-bold mt-2 sm:mt-2.5 text-center"
-            >
-              <p>together with their loved ones,</p>
-              <p>the Keshri family requests the honour of</p>
-              <p>your presence at the</p>
-            </motion.div>
+            <p className="whitespace-nowrap">LATE SHRI SATISH KUMAR</p>
+            <p className="font-cormorant italic font-bold text-[16px] sm:text-[17.5px] text-[#80484e] my-0.5 sm:my-1 normal-case leading-tight">&amp;</p>
+            <p className="whitespace-nowrap">SMT. RITA KESHRI</p>
           </motion.div>
 
-          {/* Block 3: Hero Climax (Engagement & Bride) */}
-          <div className="flex flex-col items-center w-full -my-1 sm:-my-1.5">
-            <motion.h1
-              variants={heroTitleVariants}
-              className="font-cormorant font-bold text-[38px] sm:text-[42px] text-[#80484e] tracking-wide leading-none mb-2.5 sm:mb-3"
-            >
-              Engagement
-            </motion.h1>
+          {/* 4. Host Family Request — Strictly 3 Rows */}
+          <motion.div
+            variants={textItemVariants}
+            className="font-cormorant text-[16.5px] sm:text-[18px] text-[#80484e] leading-[1.32] font-bold text-center flex flex-col items-center"
+          >
+            <p className="whitespace-nowrap">together with their loved ones,</p>
+            <p className="whitespace-nowrap">the Keshri family requests the honour of</p>
+            <p className="whitespace-nowrap">your presence at the</p>
+          </motion.div>
 
-            <motion.p
-              variants={textItemVariants}
-              className="font-cormorant italic font-bold text-[17px] sm:text-[18px] text-[#80484e] leading-none mb-3 sm:mb-3.5"
-            >
-              of their beloved granddaughter
-            </motion.p>
+          {/* 5. Event Climax: Engagement */}
+          <motion.h1
+            variants={heroTitleVariants}
+            className="font-cormorant font-bold text-[25px] sm:text-[28px] text-[#80484e] tracking-wide leading-none text-center"
+          >
+            Engagement
+          </motion.h1>
 
-            {/* Bride Name: SAKSHI with connected SH ligature matching Reference */}
-            <motion.img
-              variants={heroTitleVariants}
+          {/* 6. Granddaughter Subtitle */}
+          <motion.p
+            variants={textItemVariants}
+            className="font-cormorant italic font-bold text-[16.5px] sm:text-[18px] text-[#80484e] leading-none text-center"
+          >
+            of their beloved granddaughter
+          </motion.p>
+
+          {/* 7. Bride Name: SAKSHI with connected SH ligature matching Reference */}
+          <motion.div
+            variants={heroTitleVariants}
+            className="flex items-center justify-center w-full"
+          >
+            <img
               src={sakshiTitleImg}
               alt="Sakshi"
-              className="w-[152px] sm:w-[168px] h-auto object-contain select-none pointer-events-none drop-shadow-sm mx-auto"
+              className="w-[108px] sm:w-[116px] h-auto object-contain select-none pointer-events-none drop-shadow-sm mx-auto"
               draggable="false"
             />
-          </div>
+          </motion.div>
 
-          {/* Block 4: Lineage & Bottom Ornament */}
-          <div className="flex flex-col items-center w-full px-1">
-            <motion.div
-              variants={textItemVariants}
-              className="flex flex-col items-center gap-0.5 w-full"
-            >
-              <p className="font-cormorant text-[14px] sm:text-[15px] font-bold text-[#80484e] leading-tight whitespace-nowrap">
-                (D/o Mrs. Sangeeta &amp; Mr. Shekhar Keshri)
-              </p>
-              <p className="font-cormorant text-[14px] sm:text-[15px] font-bold text-[#80484e] leading-tight whitespace-nowrap">
-                (Sister of Shradha &amp; Shreshth Keshri)
-              </p>
-            </motion.div>
+          {/* 8. Lineage Block (Parents & Siblings) — Reduced Intimate Gap */}
+          <motion.div
+            variants={textItemVariants}
+            className="flex flex-col items-center gap-1 sm:gap-1.5 w-full"
+          >
+            <p className="font-cormorant text-[16px] sm:text-[17.5px] font-bold text-[#80484e] leading-tight text-center whitespace-nowrap">
+              (D/o Mrs. Sangeeta &amp; Mr. Shekhar Keshri)
+            </p>
+            <p className="font-cormorant text-[16px] sm:text-[17.5px] font-bold text-[#80484e] leading-tight text-center whitespace-nowrap">
+              (Sister of Shradha &amp; Shreshth Keshri)
+            </p>
+          </motion.div>
 
-            {/* Delicate Antique Gold Bottom Ornament Divider */}
-            <motion.div
-              variants={ornamentVariants}
-              className="mt-2.5 sm:mt-3 flex items-center justify-center gap-1.5 w-[42%] opacity-80"
+          {/* 10. Delicate Antique Gold Bottom Ornament Divider */}
+          <motion.div
+            variants={ornamentVariants}
+            className="flex items-center justify-center gap-1.5 w-[42%] opacity-80"
+          >
+            <div className="h-[0.75px] flex-1 bg-gradient-to-r from-transparent via-[#bfa682] to-[#bfa682]" />
+            <div className="w-[3.5px] h-[3.5px] rotate-45 bg-[#bfa682]" />
+            <svg
+              className="w-3 h-3 fill-[#bfa682] text-[#bfa682] shrink-0"
+              viewBox="0 0 24 24"
             >
-              <div className="h-[0.75px] flex-1 bg-gradient-to-r from-transparent via-[#bfa682] to-[#bfa682]" />
-              <div className="w-[3.5px] h-[3.5px] rotate-45 bg-[#bfa682]" />
-              <svg
-                className="w-3 h-3 fill-[#bfa682] text-[#bfa682] shrink-0"
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-              </svg>
-              <div className="w-[3.5px] h-[3.5px] rotate-45 bg-[#bfa682]" />
-              <div className="h-[0.75px] flex-1 bg-gradient-to-l from-transparent via-[#bfa682] to-[#bfa682]" />
-            </motion.div>
-          </div>
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+            <div className="w-[3.5px] h-[3.5px] rotate-45 bg-[#bfa682]" />
+            <div className="h-[0.75px] flex-1 bg-gradient-to-l from-transparent via-[#bfa682] to-[#bfa682]" />
+          </motion.div>
 
         </motion.div>
       </motion.div>
