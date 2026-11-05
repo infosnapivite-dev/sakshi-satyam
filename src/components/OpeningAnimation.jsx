@@ -88,17 +88,17 @@ const sealVariants = {
     },
   },
   break: {
-    scale: [0.94, 1.18, 1.38],
-    y: [1, -16, -42],
-    rotate: [0, -10, -22],
-    opacity: [1, 0.92, 0],
+    scale: [0.98, 1.04, 1.1],
+    y: [0, -6, -16],
+    rotate: [0, -2, -5],
+    opacity: [1, 0.8, 0],
     filter: [
-      'drop-shadow(0 10px 20px rgba(90, 55, 45, 0.45)) blur(0px)',
-      'drop-shadow(0 20px 35px rgba(90, 55, 45, 0.5)) blur(1px)',
-      'drop-shadow(0 25px 45px rgba(90, 55, 45, 0)) blur(8px)',
+      'drop-shadow(0 12px 24px rgba(72, 36, 54, 0.42)) blur(0px)',
+      'drop-shadow(0 18px 30px rgba(72, 36, 54, 0.25)) blur(1px)',
+      'drop-shadow(0 22px 35px rgba(72, 36, 54, 0)) blur(6px)',
     ],
     transition: {
-      duration: 0.48,
+      duration: 1.4,
       ease: [0.22, 1, 0.36, 1],
     },
   },
@@ -151,10 +151,10 @@ export default function OpeningAnimation({ onEnded }) {
       }
     }
 
-    // Remove seal from DOM after break animation completes
+    // Remove seal from DOM after smooth break animation completes
     setTimeout(() => {
       setIsSealRemoved(true);
-    }, 480);
+    }, 1400);
   };
 
   const handleVideoEnded = () => {
@@ -220,7 +220,7 @@ export default function OpeningAnimation({ onEnded }) {
               <motion.div
                 initial={{ opacity: 0, y: 4 }}
                 animate={isBreaking ? { opacity: 0, y: -10, filter: 'blur(3px)' } : { opacity: 1, y: 0, filter: 'blur(0px)' }}
-                transition={{ duration: isBreaking ? 0.32 : 0.8, ease: 'easeOut' }}
+                transition={{ duration: isBreaking ? 0.9 : 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="w-full flex flex-col items-center"
               >
                 <p className="font-cormorant font-semibold text-[20px] sm:text-[22px] text-[#80484e] leading-[1.22] tracking-[0.025em]">
@@ -312,7 +312,7 @@ export default function OpeningAnimation({ onEnded }) {
                 }
                 transition={
                   isBreaking
-                    ? { duration: 0.28 }
+                    ? { duration: 0.55, ease: 'easeOut' }
                     : {
                       duration: 2.2,
                       repeat: Infinity,
@@ -342,8 +342,8 @@ export default function OpeningAnimation({ onEnded }) {
             initial={{ opacity: 0, y: 8, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{
-              delay: 0.22,
-              duration: 0.75,
+              delay: 0.5,
+              duration: 1.0,
               ease: [0.16, 1, 0.3, 1],
             }}
             className="w-full flex flex-col items-center justify-center text-center"
