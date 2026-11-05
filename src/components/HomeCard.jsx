@@ -236,7 +236,7 @@ export default function HomeCard({ scrollContainerRef }) {
             variants={textItemVariants}
             className="font-cormorant font-bold uppercase tracking-[0.04em] text-[16.5px] sm:text-[18px] text-[#80484e] leading-tight text-center flex flex-col items-center"
           >
-            <p className="whitespace-nowrap">LATE SHRI SATISH KUMAR</p>
+            <p className="whitespace-nowrap">LATE SHRI SATISH KR.</p>
             <p className="font-cormorant italic font-bold text-[16px] sm:text-[17.5px] text-[#80484e] my-0.5 sm:my-1 normal-case leading-tight">&amp;</p>
             <p className="whitespace-nowrap">SMT. RITA KESHRI</p>
           </motion.div>
