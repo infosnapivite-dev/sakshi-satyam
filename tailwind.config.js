@@ -22,6 +22,7 @@ export default {
       fontFamily: {
         serif: ['"Cormorant Garamond"', '"Playfair Display"', 'serif'],
         cormorant: ['"Cormorant Garamond"', 'serif'],
+        script: ['"Alex Brush"', '"Great Vibes"', '"Cormorant Garamond"', 'cursive', 'serif'],
         wolmer: ['"Wolmer"', '"Cormorant Garamond"', 'serif'],
         cinzel: ['"Cinzel"', 'serif'],
         sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],

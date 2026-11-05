@@ -1,8 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import videoSrc from '../assets/opening-animation.mp4';
-import waxSealImg from '../assets/floral-wax-seal.png';
-import invitationSealedImg from '../assets/invitation-sealed-with-love.png';
+import waxSealImg from '../assets/wax-seal.webp';
 
 /**
  * Synthesizes a crisp, physical wax-seal crack/snap sound via Web Audio API.
@@ -315,10 +314,10 @@ export default function OpeningAnimation({ onEnded }) {
                   isBreaking
                     ? { duration: 0.28 }
                     : {
-                        duration: 2.2,
-                        repeat: Infinity,
-                        ease: 'easeInOut',
-                      }
+                      duration: 2.2,
+                      repeat: Infinity,
+                      ease: 'easeInOut',
+                    }
                 }
                 className="font-cormorant font-semibold text-[13px] sm:text-[14.5px] text-[#80484e] tracking-[0.08em] whitespace-nowrap"
               >
@@ -330,13 +329,13 @@ export default function OpeningAnimation({ onEnded }) {
       </AnimatePresence>
 
       {/* Permanent Post-Opening Text: "An invitation, sealed with love."
-          Smoothly replaces "Click to open" once the seal is clicked, remaining permanently visible */}
+          Smoothly replaces "Click to open" once the seal is clicked, remaining permanently visible as real typography */}
       {isBreaking && (
         <div
           className="absolute pointer-events-none select-none z-10 flex flex-col items-center text-center left-1/2 -translate-x-1/2"
           style={{
-            top: 'calc(63.8% + 72px)',
-            width: '260px',
+            top: 'calc(63.8% + 82px)',
+            width: '300px',
           }}
         >
           <motion.div
@@ -347,14 +346,38 @@ export default function OpeningAnimation({ onEnded }) {
               duration: 0.75,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className="w-full flex flex-col items-center justify-center"
+            className="w-full flex flex-col items-center justify-center text-center"
           >
-            <img
-              src={invitationSealedImg}
-              alt="An invitation, sealed with love."
-              className="w-[165px] sm:w-[182px] h-auto object-contain select-none pointer-events-none drop-shadow-[0_2px_8px_rgba(102,48,55,0.12)] mx-auto"
-              draggable="false"
-            />
+            <p
+              className="font-script text-[27px] sm:text-[30px] text-[#80484e] leading-[1.08] tracking-[0.015em] whitespace-nowrap drop-shadow-[0_1px_2px_rgba(255,255,255,0.4)]"
+              style={{
+                fontFamily: "'Alex Brush', 'Great Vibes', 'Cormorant Garamond', cursive, serif",
+              }}
+            >
+              An invitation,
+            </p>
+            <p
+              className="font-script text-[27px] sm:text-[30px] text-[#80484e] leading-[1.08] tracking-[0.015em] whitespace-nowrap -mt-0.5 sm:-mt-1 drop-shadow-[0_1px_2px_rgba(255,255,255,0.4)]"
+              style={{
+                fontFamily: "'Alex Brush', 'Great Vibes', 'Cormorant Garamond', cursive, serif",
+              }}
+            >
+              sealed with love.
+            </p>
+
+            {/* Delicate Antique Gold Star Ornament Divider */}
+            <div className="flex items-center justify-center gap-2 w-[125px] sm:w-[140px] opacity-85 mt-2 sm:mt-2.5">
+              <div className="h-[0.75px] flex-1 bg-gradient-to-r from-transparent via-[#bfa682] to-[#bfa682]" />
+              <div className="w-[2.5px] h-[2.5px] rounded-full bg-[#bfa682]" />
+              <svg
+                className="w-3.5 h-3.5 fill-[#bfa682] text-[#bfa682] shrink-0"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 0 L14.5 9.5 L24 12 L14.5 14.5 L12 24 L9.5 14.5 L0 12 L9.5 9.5 Z" />
+              </svg>
+              <div className="w-[2.5px] h-[2.5px] rounded-full bg-[#bfa682]" />
+              <div className="h-[0.75px] flex-1 bg-gradient-to-l from-transparent via-[#bfa682] to-[#bfa682]" />
+            </div>
           </motion.div>
         </div>
       )}
